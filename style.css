@@ -1,0 +1,104 @@
+/* General Reset and Body Styles */
+body {
+    background-color: #B4B8B8;
+    background: linear-gradient(270deg, #B4B8B8, #eb6b6b);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+/* Header Styles */
+h1 {
+    color: #161616;
+    font-family: cursive;
+    font-size: 150px;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+/* Profile Picture Styles */
+.Profile_Picture {
+    width: 300px; /* Adjust the width as needed */
+    height: auto; /* Keeps the aspect ratio */
+    margin-left: 20px; /* Adds space between the name and the image */
+    transition: width 0.3s ease; /* Smooth transition effect */
+}
+
+.Profile_Picture:hover {
+    width: 350px; /* Width on hover */
+    height: auto; /* Keeps the aspect ratio */
+}
+
+/* Divider Styles */
+.divider {
+    border: none;
+    height: 5px;
+    background: #161616;
+    margin: 10px auto;
+    width: 90%;
+    margin-top: -10%;
+}
+p{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+    margin: 40px auto;
+}
+
+/* Footer Styles */
+footer {
+    background: #161616;
+    color: #666464;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: auto;
+    position: relative;
+}
+
+.footer-links {
+    position: absolute;
+    right: 1em; /* Adjusts distance from the right edge */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+footer a {
+    color: #fff;
+    margin-left: 1em;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+footer a:hover {
+    transform: scale(1.2); /* Enlarges the link on hover */
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+footer p {
+    margin: 0;
+}
