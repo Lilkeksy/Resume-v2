@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size: 16px;
+    padding: 0 20px; /* Added padding to avoid text touching the edges */
 }
 
 @keyframes gradientAnimation {
@@ -27,25 +29,45 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column; /* Change to column for mobile */
     margin: auto;
+    text-align: center; /* Center align text */
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row; /* Change to row for larger screens */
+    }
 }
 
 /* Header Styles */
 h1 {
     color: #161616;
     font-family: cursive;
-    font-size: 150px;
+    font-size: 2.5em; /* Adjusted for better scaling */
     font-style: italic;
-    text-align: center;
     margin: 0;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 5em; /* Larger font size for bigger screens */
+    }
 }
 
 /* Profile Picture Styles */
 .Profile_Picture {
-    width: 300px; /* Adjust the width as needed */
+    width: 100%; /* Full width on mobile */
+    max-width: 300px; /* Limit the max width */
     height: auto; /* Keeps the aspect ratio */
-    margin-left: 20px; /* Adds space between the name and the image */
+    margin-top: 20px; /* Adds space between the name and the image */
     transition: width 0.3s ease; /* Smooth transition effect */
+}
+
+@media (min-width: 768px) {
+    .Profile_Picture {
+        margin-left: 20px; /* Adds space between the name and the image on larger screens */
+    }
 }
 
 .Profile_Picture:hover {
@@ -60,13 +82,13 @@ h1 {
     background: #161616;
     margin: 10px auto;
     width: 90%;
-    margin-top: -10%;
 }
-p{
-    font-size: 20px;
+
+p {
+    font-size: 1.25em; /* Adjusted for better scaling */
     font-style: italic;
     font-weight: 600;
-    margin: 40px auto;
+    margin: 20px auto; /* Adjusted margin for mobile */
 }
 
 /* Footer Styles */
@@ -80,25 +102,50 @@ footer {
 }
 
 .footer-links {
-    position: absolute;
-    right: 1em; /* Adjusts distance from the right edge */
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 10px; /* Margin to give some space on mobile */
 }
 
-footer a {
+.footer-links a {
     color: #fff;
-    margin-left: 1em;
+    margin: 0 10px;
     text-decoration: none;
     transition: transform 0.3s ease;
 }
 
-footer a:hover {
+.footer-links a:hover {
     transform: scale(1.2); /* Enlarges the link on hover */
     text-decoration: underline;
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 footer p {
-    margin: 0;
+    margin: 10px 0 0 0;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center;
+    }
+
+    .Profile_Picture {
+        width: 80%; /* Make profile picture take 80% of the container */
+        margin: 20px auto; /* Center the profile picture */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Smaller font size for smaller screens */
+    }
+
+    p {
+        font-size: 1em; /* Smaller font size for smaller screens */
+    }
+
+    .footer-links {
+        position: static;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
 }
